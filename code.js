@@ -40,18 +40,18 @@ for (let i = 0; i < upgrades.length; i++) {
 }
 
 function Save() {
-    sessionStorage.setItem("gameinfo", JSON.stringify(gameinfo))
-    sessionStorage.setItem("upgrades", JSON.stringify(upgrades))
+    localStorage.setItem("gameinfo", JSON.stringify(gameinfo))
+    localStorage.setItem("upgrades", JSON.stringify(upgrades))
 }
 
 window.onload = function() {
-    let info = JSON.parse(sessionStorage.getItem("gameinfo"))
+    let info = JSON.parse(localStorage.getItem("gameinfo"))
 
     if (info) {
         gameinfo = info
     }
 
-    info = JSON.parse(this.sessionStorage.getItem("upgrades"))
+    info = JSON.parse(this.localStorage.getItem("upgrades"))
 
     if (info) {
         for (let i = 0; i < info.length; i++) {
