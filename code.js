@@ -110,3 +110,11 @@ function CookieClicked() {
 }
 
 cookie.addEventListener("click", CookieClicked)
+
+cookie.addEventListener("mousedown", () => {
+    cookie.classList.add("clicked");
+});
+
+cookie.addEventListener("mouseup", () => {
+    cookie.classList.remove("clicked");
+});
