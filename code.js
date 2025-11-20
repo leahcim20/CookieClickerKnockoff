@@ -40,18 +40,18 @@ for (let i = 0; i < upgrades.length; i++) {
 }
 
 function Save() {
-    localStorage.setItem("gameinfo", JSON.stringify(gameinfo))
-    localStorage.setItem("upgrades", JSON.stringify(upgrades))
+    sessionStorage.setItem("gameinfo", JSON.stringify(gameinfo))
+    sessionStorage.setItem("upgrades", JSON.stringify(upgrades))
 }
 
 window.onload = function() {
-    let info = JSON.parse(localStorage.getItem("gameinfo"))
+    let info = JSON.parse(sessionStorage.getItem("gameinfo"))
 
     if (info) {
         gameinfo = info
     }
 
-    info = JSON.parse(this.localStorage.getItem("upgrades"))
+    info = JSON.parse(this.sessionStorage.getItem("upgrades"))
 
     if (info) {
         for (let i = 0; i < info.length; i++) {
@@ -70,6 +70,7 @@ function UpdateGui() {
     }
     text.innerText = gameinfo.cookies.toLocaleString()
     clickpowertext.innerText = gameinfo.cps.toLocaleString()
+    Save()
 }
 
 function formatNumber(num) {
